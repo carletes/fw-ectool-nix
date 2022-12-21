@@ -39,6 +39,6 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/DHowett/framework-ec";
     license = licenses.bsd3;
     mainProgram = "ectool";
-    platforms = platforms.all;
+    platforms = [ "x86_64-linux" ];
   };
 }
