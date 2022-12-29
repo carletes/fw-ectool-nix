@@ -1,5 +1,5 @@
 {
-  description = "Embedded Controller tool for the Framework Laptop";
+  description = "Embedded Controller coomand-line tool for the Framework Laptop";
 
   inputs.nixpkgs.url = "nixpkgs/nixpkgs-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
@@ -9,17 +9,18 @@
       overlays.default =
         (
           final: prev: {
-            fw-ectool = prev.callPackage ./default.nix { pkgs = prev; };
+            framework-ectool = prev.callPackage ./default.nix { pkgs = prev; };
           }
         );
     } // (
-      flake-utils.lib.eachDefaultSystem (system:
+      flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
         let
           pkgs = import nixpkgs { inherit system; overlays = [ self.overlays.default ]; };
         in
         {
           packages = {
-            fw-ectool = pkgs.fw-ectool;
+            framework-ectool = pkgs.framework-ectool;
           };
-        }));
+        })
+    );
 }
