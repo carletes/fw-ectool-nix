@@ -1,5 +1,5 @@
 {
-  description = "Embedded Controller coomand-line tool for the Framework Laptop";
+  description = "Embedded Controller coomand-line tool for the Framework laptop";
 
   inputs.nixpkgs.url = "nixpkgs/nixpkgs-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";

@@ -43,7 +43,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = ''
-      Embedded Controller coomand-line tool for the Framework Laptop
+      Embedded Controller coomand-line tool for the Framework laptop
     '';
     homepage = "https://github.com/DHowett/framework-ec";
     license = licenses.bsd3;
